@@ -1,5 +1,8 @@
 package main;
 
+import mino.Block;
+import mino.Mino;
+
 import java.awt.*;
 
 public class PlayManager {
@@ -12,6 +15,11 @@ public class PlayManager {
     public static int top_y;
     public static int bottom_y;
 
+    // Mino
+    Mino currentMino;
+    final int MINO_START_X;
+    final int MINO_START_Y;
+
     public PlayManager() {
 
         // Main Play Area Frame
@@ -19,6 +27,9 @@ public class PlayManager {
         right_x = left_x + WIDTH;
         top_y = 50;
         bottom_y = top_y + HEIGHT;
+
+        MINO_START_X = left_x + (WIDTH/2) - Block.SIZE;
+        MINO_START_Y = top_y + Block.SIZE;
     }
     public void update() {
 
@@ -34,6 +45,11 @@ public class PlayManager {
         int x = right_x + 100;
         int y = bottom_y - 200;
         g2.drawRect(x, y, 200, 200);
+        g2.setFont(new Font("Montserrat", Font.BOLD, 30));
+        g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        g2.drawString("NEXT", x+60, y+60);
+
+
 
     }
 }
