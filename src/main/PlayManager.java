@@ -32,7 +32,7 @@ public class PlayManager {
         // Draw Next Mino Frame
         int x = right_x + 100;
         int y = bottom_y + 200;
-        g2.drawRect(x, y, 200, 200);˚
+        g2.drawRect(x, y, 200, 200);
 
     }
 }
